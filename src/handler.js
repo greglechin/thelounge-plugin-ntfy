@@ -128,5 +128,4 @@ function createHandler(client, network) {
 
 module.exports = {
   createHandler,
-  stripIrcFormatting,
 };
