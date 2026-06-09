@@ -3,7 +3,7 @@
 ![NPM Version](https://img.shields.io/npm/v/thelounge-plugin-ntfy?style=for-the-badge)
 ![NPM Downloads](https://img.shields.io/npm/dy/thelounge-plugin-ntfy?style=for-the-badge)
 
-A plugin for [The Lounge](https://thelounge.chat/) that sends a message to an [ntfy](https://ntfy.sh/) server whenever you are mentioned in a chat.
+A plugin for [The Lounge](https://thelounge.chat/) that sends a message to an [ntfy](https://ntfy.sh/) server whenever The Lounge highlights a message for you.
 
 ## Installation
 
@@ -55,15 +55,11 @@ To start/stop sending push notifications in the desired network, enter:
 /ntfy start/stop
 ```
 
-## Private Messages
+## Highlights and Private Messages
 
-By default, you will only be notified when you are mentioned, **this includes messages sent privately to you**. If you want to be notified of all private messages on a specific network, enter this command while connected to that network and start the notifier like usual:
+ntfy notifications follow The Lounge's built-in highlight rules. This includes your nickname, custom highlights, and highlight exceptions configured in The Lounge.
 
-```
-/ntfy config network set config.notify_on_private_messages true
-```
-
-This setting is per-network, so you can enable it for some networks and disable it for others.
+Private messages notify by default, matching The Lounge's query highlight behavior. Muted channels and muted private message conversations do not send ntfy notifications.
 
 ## License
 
