@@ -80,6 +80,17 @@ function createHandler(client, network) {
         return;
       }
 
+      if (
+        isPM &&
+        channel &&
+        userConfig.config.suppress_private_messages_when_open !== false &&
+        Object.values(client.client.attachedClients).some(
+          (attachedClient) => attachedClient.openChannel === channel.id,
+        )
+      ) {
+        return;
+      }
+
       let ntfyAuth;
 
       if (userConfig.ntfy.token) {

@@ -23,6 +23,7 @@ const DEFAULT_CONFIG = {
   },
   config: {
     notify_on_private_messages: {}, // Per-network: { "network-uuid": true/false }
+    suppress_private_messages_when_open: true,
   },
 };
 
@@ -33,8 +34,11 @@ const GLOBAL_KEYS = new Set([
   "ntfy.password",
   "ntfy.token",
   "ntfy.priority",
+  "config.suppress_private_messages_when_open",
 ]);
-const GLOBAL_BOOLEAN_KEYS = new Set([]);
+const GLOBAL_BOOLEAN_KEYS = new Set([
+  "config.suppress_private_messages_when_open",
+]);
 const GLOBAL_NUMERIC_KEYS = new Set(["ntfy.priority"]);
 
 const PER_NETWORK_KEYS = new Set(["config.notify_on_private_messages"]);
@@ -124,6 +128,10 @@ const userConfigSchema = {
           type: "object",
           additionalProperties: { type: "boolean" },
           default: {},
+        },
+        suppress_private_messages_when_open: {
+          type: "boolean",
+          default: true,
         },
       },
     },

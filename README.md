@@ -61,6 +61,14 @@ ntfy notifications follow The Lounge's built-in highlight rules. This includes y
 
 Private messages notify by default, matching The Lounge's query highlight behavior. Muted channels and muted private message conversations do not send ntfy notifications.
 
+By default, private message notifications are suppressed when that private message window is already open in any connected client. To keep sending private message notifications even when the window is open, run:
+
+```
+/ntfy config set config.suppress_private_messages_when_open false
+```
+
+This setting only affects private messages. Channel highlight notifications are unchanged.
+
 ## License
 
 This plugin is licensed under [MIT](https://opensource.org/license/mit)
